@@ -1,5 +1,11 @@
 package topic0.point2;
 
+/*
+ * This is a builder implementation of a Builder Pattern. 
+ * 
+ * This class is a builder of a House. This builder builds a small size house.
+ */
+
 public class SmallHouseBuilder implements HouseBuilder {
 
 	/*
