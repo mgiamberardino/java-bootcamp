@@ -1,47 +1,52 @@
 package topic0.point2;
+/*
+ * This is a builder implementation of a Builder Pattern. 
+ * 
+ * This class is a builder of a House. This builder builds an average size house.
+ */
 
-public class MedHouseBuilder implements HouseBuilder {
+public class AvgHouseBuilder implements HouseBuilder {
 
+	/*
+	 * House instance to build.
+	 */
 	House house;
 	
-	public MedHouseBuilder() {
+	/*
+	 * Constructor
+	 */
+	public AvgHouseBuilder() {
 		super();
 		house = new House();
 	}
-
+	
 	@Override
 	public House buildHouse() {
-		// TODO Auto-generated method stub
 		return house;
 	}
 	
 	@Override
 	public void buildRooms() {
-		// TODO Auto-generated method stub
 		house.setnRooms(3);
 	}
 
 	@Override
 	public void buildBathRooms() {
-		// TODO Auto-generated method stub
 		house.setnBathRooms(2);		
 	}
 
 	@Override
 	public void buildFloors() {
-		// TODO Auto-generated method stub
 		house.setnFloors(2);		
 	}
 
 	@Override
 	public void buildGarage() {
-		// TODO Auto-generated method stub
 		house.setGarage(true);		
 	}
 
 	@Override
 	public void calculateM2() {
-		// TODO Auto-generated method stub
 		house.setM2(Long.valueOf(100));		
 	}
 

@@ -2,8 +2,19 @@ package topic0.point2;
 
 public class SmallHouseBuilder implements HouseBuilder {
 
+	/*
+	 * If have one or two rooms.
+	 */
 	private boolean twoRooms=false;
+	
+	/*
+	 * Instance of the house to build
+	 */
 	private House house;
+	
+	/*
+	 * Complete construtor
+	 */
 	public SmallHouseBuilder(boolean twoRooms) {
 		this.twoRooms = twoRooms;
 		house = new House();
@@ -11,13 +22,11 @@ public class SmallHouseBuilder implements HouseBuilder {
 
 	@Override
 	public House buildHouse() {
-		// TODO Auto-generated method stub
 		return house;
 	}
 
 	@Override
 	public void buildRooms() {
-		// TODO Auto-generated method stub
 		if (twoRooms){
 			house.setnRooms(2);
 		}else{
@@ -27,19 +36,16 @@ public class SmallHouseBuilder implements HouseBuilder {
 
 	@Override
 	public void buildBathRooms() {
-		// TODO Auto-generated method stub
 		house.setnBathRooms(1);		
 	}
 
 	@Override
 	public void buildFloors() {
-		// TODO Auto-generated method stub
 		house.setnFloors(1);		
 	}
 
 	@Override
 	public void buildGarage() {
-		// TODO Auto-generated method stub
 		if (twoRooms){
 			house.setGarage(false);
 		}else{
@@ -49,7 +55,6 @@ public class SmallHouseBuilder implements HouseBuilder {
 
 	@Override
 	public void calculateM2() {
-		// TODO Auto-generated method stub
 		house.setM2(Long.valueOf(50));		
 	}
 

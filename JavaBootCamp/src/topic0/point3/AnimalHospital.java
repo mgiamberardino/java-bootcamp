@@ -17,7 +17,7 @@ public class AnimalHospital extends Hospital {
 
 
 	@Override
-	public String getTipo() {
+	public String getKind() {
 		// TODO Auto-generated method stub
 		return "Animal";
 	}
