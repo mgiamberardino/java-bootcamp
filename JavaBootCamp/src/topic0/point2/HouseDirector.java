@@ -4,9 +4,9 @@ package topic0.point2;
  * This is the Director class of the Builder Pattern
  */
 public class HouseDirector {
-	
+
 	private HouseBuilder builder;
-	
+
 	/*
 	 * Constructor
 	 */
@@ -17,9 +17,10 @@ public class HouseDirector {
 
 	/*
 	 * This method implements the process to build the house.
+	 * 
 	 * @return house the house builded
 	 */
-	public House getHouse(){
+	public House getHouse() {
 		builder.buildBathRooms();
 		builder.buildFloors();
 		builder.buildGarage();
@@ -27,5 +28,5 @@ public class HouseDirector {
 		builder.calculateM2();
 		return builder.buildHouse();
 	}
-	
+
 }

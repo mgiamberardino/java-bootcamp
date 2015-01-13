@@ -8,13 +8,11 @@ public class HumanHospital extends Hospital {
 		super(pais, estado, ciudad, fechaApertura);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public HumanHospital() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	@Override
 	public String getKind() {

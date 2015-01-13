@@ -1,4 +1,5 @@
 package topic0.point2;
+
 /*
  * This is a builder implementation of a Builder Pattern. 
  * 
@@ -11,7 +12,7 @@ public class AvgHouseBuilder implements HouseBuilder {
 	 * House instance to build.
 	 */
 	House house;
-	
+
 	/*
 	 * Constructor
 	 */
@@ -19,12 +20,12 @@ public class AvgHouseBuilder implements HouseBuilder {
 		super();
 		house = new House();
 	}
-	
+
 	@Override
 	public House buildHouse() {
 		return house;
 	}
-	
+
 	@Override
 	public void buildRooms() {
 		house.setnRooms(3);
@@ -32,22 +33,22 @@ public class AvgHouseBuilder implements HouseBuilder {
 
 	@Override
 	public void buildBathRooms() {
-		house.setnBathRooms(2);		
+		house.setnBathRooms(2);
 	}
 
 	@Override
 	public void buildFloors() {
-		house.setnFloors(2);		
+		house.setnFloors(2);
 	}
 
 	@Override
 	public void buildGarage() {
-		house.setGarage(true);		
+		house.setGarage(true);
 	}
 
 	@Override
 	public void calculateM2() {
-		house.setM2(Long.valueOf(100));		
+		house.setM2(Long.valueOf(100));
 	}
 
 }

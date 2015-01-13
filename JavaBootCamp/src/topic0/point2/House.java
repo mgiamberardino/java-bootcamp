@@ -33,7 +33,7 @@ public class House {
 	 * If have garage
 	 */
 	private boolean garage;
-	
+
 	/*
 	 * Contructor
 	 */
@@ -130,5 +130,5 @@ public class House {
 	public void setGarage(boolean garage) {
 		this.garage = garage;
 	}
-	
+
 }

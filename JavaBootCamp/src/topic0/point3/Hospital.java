@@ -2,13 +2,13 @@ package topic0.point3;
 
 import java.util.Date;
 
-public abstract class Hospital implements IPrototype{
+public abstract class Hospital implements IPrototype {
 
 	protected String country;
 	protected String state;
 	protected String city;
 	protected Date openingDate;
-	
+
 	/*
 	 * Constructor with all attributes
 	 */
@@ -19,7 +19,7 @@ public abstract class Hospital implements IPrototype{
 		this.city = city;
 		this.openingDate = openingDate;
 	}
-	
+
 	/*
 	 * Empty construtor
 	 */
@@ -28,18 +28,20 @@ public abstract class Hospital implements IPrototype{
 	}
 
 	/*
-	 * Must be implemented
-	 * This method must return the kind of Hospital that the instance is.
+	 * Must be implemented This method must return the kind of Hospital that the
+	 * instance is.
 	 */
 	public abstract String getKind();
+
 	/*
-	 * Must be implemented
-	 * This method must return a list of patients of the hospital.
+	 * Must be implemented This method must return a list of patients of the
+	 * hospital.
 	 */
 	public abstract void listPatients();
-	
+
 	/*
 	 * Prototype pattern implementation.
+	 * 
 	 * @see topic0.point3.IPrototype#doClone()
 	 */
 	@Override
@@ -56,7 +58,8 @@ public abstract class Hospital implements IPrototype{
 	}
 
 	/**
-	 * @param country the country to set
+	 * @param country
+	 *            the country to set
 	 */
 	public void setCountry(String country) {
 		this.country = country;
@@ -70,7 +73,8 @@ public abstract class Hospital implements IPrototype{
 	}
 
 	/**
-	 * @param state the state to set
+	 * @param state
+	 *            the state to set
 	 */
 	public void setState(String state) {
 		this.state = state;
@@ -84,7 +88,8 @@ public abstract class Hospital implements IPrototype{
 	}
 
 	/**
-	 * @param city the city to set
+	 * @param city
+	 *            the city to set
 	 */
 	public void setCity(String city) {
 		this.city = city;
@@ -98,12 +103,11 @@ public abstract class Hospital implements IPrototype{
 	}
 
 	/**
-	 * @param openingDate the openingDate to set
+	 * @param openingDate
+	 *            the openingDate to set
 	 */
 	public void setOpeningDate(Date openingDate) {
 		this.openingDate = openingDate;
 	}
-	
-	
-	
+
 }

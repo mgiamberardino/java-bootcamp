@@ -11,13 +11,13 @@ public class SmallHouseBuilder implements HouseBuilder {
 	/*
 	 * If have one or two rooms.
 	 */
-	private boolean twoRooms=false;
-	
+	private boolean twoRooms = false;
+
 	/*
 	 * Instance of the house to build
 	 */
 	private House house;
-	
+
 	/*
 	 * Complete construtor
 	 */
@@ -33,35 +33,35 @@ public class SmallHouseBuilder implements HouseBuilder {
 
 	@Override
 	public void buildRooms() {
-		if (twoRooms){
+		if (twoRooms) {
 			house.setnRooms(2);
-		}else{
+		} else {
 			house.setnRooms(1);
 		}
 	}
 
 	@Override
 	public void buildBathRooms() {
-		house.setnBathRooms(1);		
+		house.setnBathRooms(1);
 	}
 
 	@Override
 	public void buildFloors() {
-		house.setnFloors(1);		
+		house.setnFloors(1);
 	}
 
 	@Override
 	public void buildGarage() {
-		if (twoRooms){
+		if (twoRooms) {
 			house.setGarage(false);
-		}else{
+		} else {
 			house.setGarage(true);
-		}		
+		}
 	}
 
 	@Override
 	public void calculateM2() {
-		house.setM2(Long.valueOf(50));		
+		house.setM2(Long.valueOf(50));
 	}
 
 }
