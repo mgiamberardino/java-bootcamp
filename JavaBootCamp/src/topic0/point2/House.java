@@ -32,13 +32,12 @@ public class House {
 	/*
 	 * If have garage
 	 */
-	private boolean garage;
+	private Boolean garage;
 
 	/*
 	 * Contructor
 	 */
-	public House() {
-		super();
+	House() {
 	}
 
 	/*
@@ -114,11 +113,11 @@ public class House {
 	}
 
 	/*
-	 * If the house have garage
+	 * If the house has a garage
 	 * 
-	 * @return true if the house have garage
+	 * @return true if the house has a garage
 	 */
-	public boolean haveGarage() {
+	public boolean hasGarage() {
 		return garage;
 	}
 

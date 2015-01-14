@@ -1,53 +1,54 @@
 package topic0.point3;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Vector;
 
-public abstract class Hospital implements IPrototype {
+public class Hospital implements IHospital {
 
 	protected String country;
 	protected String state;
 	protected String city;
 	protected Date openingDate;
-
+	Vector<Area> areas;
+	
 	/*
 	 * Constructor with all attributes
 	 */
 	public Hospital(String country, String state, String city, Date openingDate) {
-		super();
 		this.country = country;
 		this.state = state;
 		this.city = city;
 		this.openingDate = openingDate;
+		areas = new Vector<Area>();
 	}
 
 	/*
 	 * Empty construtor
 	 */
 	public Hospital() {
-		super();
+		areas = new Vector<Area>();
 	}
 
-	/*
-	 * Must be implemented This method must return the kind of Hospital that the
-	 * instance is.
-	 */
-	public abstract String getKind();
-
-	/*
-	 * Must be implemented This method must return a list of patients of the
-	 * hospital.
-	 */
-	public abstract void listPatients();
-
-	/*
-	 * Prototype pattern implementation.
-	 * 
-	 * @see topic0.point3.IPrototype#doClone()
-	 */
 	@Override
-	public Hospital doClone() {
-		// TODO Auto-generated method stub
-		return new AnimalHospital(country, state, city, openingDate);
+	public Collection<Patient> getPatients(){
+		Iterator<Area> it = areas.iterator();
+		Vector<Patient> patients= new Vector<Patient>();
+		while(it.hasNext()){
+			patients.addAll(it.next().getPatients());
+		}
+		return patients;
+	}
+	
+	@Override
+	public Collection<Doctor> getDoctors() {
+		Iterator<Area> it = areas.iterator();
+		Vector<Doctor> doctors= new Vector<Doctor>();
+		while(it.hasNext()){
+			doctors.addAll(it.next().getDoctors());
+		}
+		return doctors;
 	}
 
 	/**
@@ -108,6 +109,20 @@ public abstract class Hospital implements IPrototype {
 	 */
 	public void setOpeningDate(Date openingDate) {
 		this.openingDate = openingDate;
+	}
+	
+	/**
+	 * @return the areas
+	 */
+	public Vector<Area> getAreas() {
+		return areas;
+	}
+
+	/**
+	 * @param areas the areas to set
+	 */
+	public void setAreas(Vector<Area> areas) {
+		this.areas = areas;
 	}
 
 }

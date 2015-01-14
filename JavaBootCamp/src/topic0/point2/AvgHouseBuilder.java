@@ -17,7 +17,6 @@ public class AvgHouseBuilder implements HouseBuilder {
 	 * Constructor
 	 */
 	public AvgHouseBuilder() {
-		super();
 		house = new House();
 	}
 
