@@ -1,11 +1,12 @@
-package topic1;
+package topic1.wherehouse;
 
+import java.util.Comparator;
 import java.util.Vector;
 
-public class Item extends AbsItem {
+public class Item extends AbsItem implements IProduct {
 
 	protected Double price;
-	
+
 	/**
 	 * @param code
 	 * @param name
@@ -15,8 +16,7 @@ public class Item extends AbsItem {
 		super(code, name);
 		this.price = price;
 	}
-	
-	
+
 	/**
 	 * @param code
 	 * @param name
@@ -25,7 +25,6 @@ public class Item extends AbsItem {
 		super(code, name);
 	}
 
-
 	/**
 	 * 
 	 */
@@ -33,29 +32,12 @@ public class Item extends AbsItem {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
-	/**
-	 * @return the price
-	 */
-	public Double getPrice() {
-		return price;
-	}
-
-
-	/**
-	 * @param price the price to set
-	 */
-	public void setPrice(Double price) {
-		this.price = price;
-	}
-
-
-	@Override
+	
+	/*@Override
 	public Double getTotal() {
 		// TODO Auto-generated method stub
 		return price;
-	}
+	}*/
 
 	@Override
 	public Vector<IItem> getItems() {
@@ -66,19 +48,25 @@ public class Item extends AbsItem {
 	}
 
 	@Override
-	public IItem getMostExpensive() {
-		// TODO Auto-generated method stub
-		return this;
-	}
-
-	@Override
-	public IItem getCheapest() {
-		// TODO Auto-generated method stub
-		return this;
-	}
-
-	@Override
 	public String toString() {
 		return name + " ..... $ " + price + "\n";
 	}
+
+	@Override
+	public Vector<IItem> find(IFilter filter) {
+		// TODO Auto-generated method stub
+		Vector<IItem> items = new Vector<IItem>();
+		if (filter.cumple(this))
+			items.add(this);
+		return items;
+	}
+
+	@Override
+	public Vector<IItem> sort(Comparator<IItem> comparator) {
+		// TODO Auto-generated method stub
+		Vector<IItem> items = new Vector<IItem>();
+		items.add(this);
+		return items;
+	}
+
 }
