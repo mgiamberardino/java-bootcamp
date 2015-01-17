@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <interface id="1" language="java" name="org.maugiam.shoppingcart.wherehouse.IItem" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/wherehouse/IItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="210" x="89" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="2" language="java" name="org.maugiam.shoppingcart.wherehouse.IStockeable" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/wherehouse/IStockeable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="179" x="1015" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="3" language="java" name="org.maugiam.shoppingcart.purchase.PercentageDiscount" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/PercentageDiscount.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="164" x="811" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="org.maugiam.shoppingcart.purchase.FirstPercentageDiscount" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/FirstPercentageDiscount.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="277" x="641" y="351"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="org.maugiam.shoppingcart.purchase.PurchaseOrder" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/PurchaseOrder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="179" x="1234" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="org.maugiam.shoppingcart.purchase.PurchaseOrderFactory" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/PurchaseOrderFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="229" x="339" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="org.maugiam.shoppingcart.purchase.PriceComparator" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/PriceComparator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="153" x="618" y="-4"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="8" language="java" name="org.maugiam.shoppingcart.purchase.IOrder" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/IOrder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="161" x="1135" y="351"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="9" language="java" name="org.maugiam.shoppingcart.purchase.IDiscount" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/purchase/IDiscount.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="137" x="958" y="351"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <realization id="10">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <association id="11">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="12" name="instance"/>      
+      <multiplicity id="13" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="14">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <generalization id="16">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
