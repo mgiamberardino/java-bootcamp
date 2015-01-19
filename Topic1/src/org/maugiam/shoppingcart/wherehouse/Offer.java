@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
 
+import org.maugiam.filterable.IFilter;
+
 /**
  * This class extends an abstract item and represents an offer (a collection of AbsItem).
  * 
@@ -84,10 +86,10 @@ public class Offer extends AbsItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.shoppingcart.wherehouse.IFilter)
+	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
-	public Vector<IItem> find(IFilter filter) {
+	public Vector<IItem> find(IFilter<IItem> filter) {
 		Vector<IItem> filteredItems = new Vector<IItem>();
 		Iterator<IItem> it = items.values().iterator();
 		while (it.hasNext()) {

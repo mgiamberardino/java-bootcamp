@@ -39,7 +39,7 @@ public class TransactionFactory {
 	 *            the order of the transaction
 	 * @return the transaction created from the params data
 	 */
-	public Transaction getNewTransaction(PaymentMethod paymentMethod, IOrder order) {
+	public Transaction getNewTransaction(IPaymentMethod paymentMethod, IOrder order) {
 		Long aux = new Long(lastTransaction);
 		lastTransaction++;
 		return new Transaction(paymentMethod, aux, order);

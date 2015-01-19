@@ -5,16 +5,17 @@ package org.maugiam.shoppingcart.purchase;
  *
  * @author Mauro J Giamberardino
  */
-public class PercentageDiscount implements IDiscount {
+public class PercentageDiscount extends AbsDiscount {
 
 	protected Double percentage;
 
-	public PercentageDiscount(Double percentage) {
+	public PercentageDiscount(Double percentage,IOrder order) {
+		super(order);
 		this.percentage = percentage;
 	}
 
 	@Override
-	public Double getTotal(IOrder order) {
+	public Double getTotal() {
 		return order.getTotal() * (1 - percentage);
 	}
 

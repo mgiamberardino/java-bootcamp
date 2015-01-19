@@ -13,10 +13,10 @@ import org.maugiam.shoppingcart.security.User;
 public class Transaction implements ITransaction {
 
 	protected Long transactionNumber;
-	protected PaymentMethod paymentMethod;
+	protected IPaymentMethod paymentMethod;
 	protected IOrder order;
 
-	Transaction(PaymentMethod paymentMethod, Long transactionNumber, IOrder order) {
+	Transaction(IPaymentMethod paymentMethod, Long transactionNumber, IOrder order) {
 		this.paymentMethod = paymentMethod;
 		this.transactionNumber = transactionNumber;
 		this.order = order;
@@ -40,7 +40,7 @@ public class Transaction implements ITransaction {
 	/**
 	 * @return the paymentMethod
 	 */
-	public PaymentMethod getPaymentMethod() {
+	public IPaymentMethod getPaymentMethod() {
 		return paymentMethod;
 	}
 
@@ -48,7 +48,7 @@ public class Transaction implements ITransaction {
 	 * @param paymentMethod
 	 *            the paymentMethod to set
 	 */
-	public void setPaymentMethod(PaymentMethod paymentMethod) {
+	public void setPaymentMethod(CashMethod paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
 

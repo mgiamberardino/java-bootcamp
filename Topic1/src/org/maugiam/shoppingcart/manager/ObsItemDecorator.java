@@ -3,7 +3,7 @@ package org.maugiam.shoppingcart.manager;
 import java.util.Comparator;
 import java.util.Vector;
 
-import org.maugiam.shoppingcart.wherehouse.IFilter;
+import org.maugiam.filterable.IFilter;
 import org.maugiam.shoppingcart.wherehouse.IItem;
 
 /**
@@ -62,7 +62,7 @@ public class ObsItemDecorator extends MailingListObservable implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.shoppingcart.wherehouse.IFilter)
+	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
 	public Vector<IItem> find(IFilter filter) {

@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Vector;
 
-import org.maugiam.shoppingcart.payment.PaymentMethod;
+import org.maugiam.shoppingcart.payment.CashMethod;
+import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.payment.TransactionFactory;
 import org.maugiam.shoppingcart.security.User;
@@ -28,7 +29,7 @@ public class PurchaseOrder implements IOrder {
 		items = new HashMap<IItem, Long>();
 	}
 
-	public Transaction pay(PaymentMethod payment) {
+	public Transaction pay(IPaymentMethod payment) {
 		payment.pay(this);
 		Transaction t = TransactionFactory.getInstance().getNewTransaction(payment, this);
 		return t;

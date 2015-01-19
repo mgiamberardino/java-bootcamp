@@ -20,7 +20,7 @@ public interface ITransaction {
 	 * 
 	 * @return PaymentMethod the payment method of the transaction
 	 */
-	public PaymentMethod getPaymentMethod();
+	public IPaymentMethod getPaymentMethod();
 
 	/**
 	 * 

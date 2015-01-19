@@ -1,4 +1,4 @@
-package org.maugiam.shoppingcart.wherehouse;
+package org.maugiam.filterable;
 
 /**
  * This is an interface for a filter of IItem, this is part of an strategy
@@ -7,7 +7,7 @@ package org.maugiam.shoppingcart.wherehouse;
  * @author Mauro J Giamberardino
  *
  */
-public interface IFilter {
+public interface IFilter<T> {
 
 	/**
 	 * Checks if an item satisfies a condition. The condition must be
@@ -16,6 +16,6 @@ public interface IFilter {
 	 * @param item the item to check if satisfies the condition
 	 * @return if the condition is satisfied
 	 */
-	public Boolean satisfies(IItem item);
+	public Boolean satisfies(T item);
 
 }

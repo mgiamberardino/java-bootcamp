@@ -3,6 +3,8 @@ package org.maugiam.shoppingcart.wherehouse;
 import java.util.Comparator;
 import java.util.Vector;
 
+import org.maugiam.filterable.IFilter;
+
 /**
  * This is the interface of an Item of the shopping cart.
  * 
@@ -38,7 +40,7 @@ public interface IItem {
 	 * @param filter the criteria to search
 	 * @return a collection with the search results
 	 */
-	public Vector<IItem> find(IFilter filter);
+	public Vector<IItem> find(IFilter<IItem> filter);
 
 	/**
 	 * Orders a collection of items

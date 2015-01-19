@@ -2,7 +2,8 @@ package org.maugiam.shoppingcart.manager;
 
 import java.util.Vector;
 
-import org.maugiam.shoppingcart.payment.PaymentMethod;
+import org.maugiam.shoppingcart.payment.CashMethod;
+import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.purchase.IOrder;
 import org.maugiam.shoppingcart.security.User;
@@ -29,10 +30,10 @@ public class ObsOrderDecorator extends MailingListObservable implements IOrder {
 	 * Notifies when a transaction is maded
 	 * 
 	 * @see org.maugiam.shoppingcart.purchase.IOrder#pay(org.maugiam.shoppingcart
-	 *      .payment.PaymentMethod)
+	 *      .payment.CashMethod)
 	 */
 	@Override
-	public Transaction pay(PaymentMethod paymentMethod) {
+	public Transaction pay(IPaymentMethod paymentMethod) {
 		Transaction t = order.pay(paymentMethod);
 		notifyObservers(new String("A new transaction with the " + t.getTransactionNumber() + " transaction number was made."));
 		return t;

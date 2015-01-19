@@ -17,13 +17,13 @@ public class FirstPercentageDiscount extends PercentageDiscount {
 
 	protected Comparator<IItem> criteria;
 
-	public FirstPercentageDiscount(Double percentage, Comparator<IItem> criteria) {
-		super(percentage);
+	public FirstPercentageDiscount(Double percentage, Comparator<IItem> criteria, IOrder order) {
+		super(percentage,order);
 		this.criteria = criteria;
 	}
 
-	public FirstPercentageDiscount(Double percentage) {
-		super(percentage);
+	public FirstPercentageDiscount(Double percentage,IOrder order) {
+		super(percentage,order);
 	}
 
 	/**
@@ -31,8 +31,8 @@ public class FirstPercentageDiscount extends PercentageDiscount {
 	 * @see org.maugiam.shoppingcart.purchase.PercentageDiscount#getTotal(org.maugiam.shoppingcart.purchase.IOrder)
 	 */
 	@Override
-	public Double getTotal(IOrder iOrder) {
-		Vector<IItem> items = iOrder.getItems();
+	public Double getTotal() {
+		Vector<IItem> items = order.getItems();
 		Collections.sort(items, criteria);
 		return items.firstElement().getPrice() * (1 - percentage);
 	}

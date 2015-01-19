@@ -3,6 +3,8 @@ package org.maugiam.shoppingcart.wherehouse;
 import java.util.Comparator;
 import java.util.Vector;
 
+import org.maugiam.filterable.IFilter;
+
 /**
  * This class extends an abstract item and represents a single item.
  * 
@@ -62,10 +64,10 @@ public class Item extends AbsItem implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.shoppingcart.wherehouse.IFilter)
+	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
-	public Vector<IItem> find(IFilter filter) {
+	public Vector<IItem> find(IFilter<IItem> filter) {
 		// TODO Auto-generated method stub
 		Vector<IItem> items = new Vector<IItem>();
 		if (filter.satisfies(this))

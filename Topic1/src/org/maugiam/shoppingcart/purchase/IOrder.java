@@ -1,6 +1,7 @@
 package org.maugiam.shoppingcart.purchase;
 
-import org.maugiam.shoppingcart.payment.PaymentMethod;
+import org.maugiam.shoppingcart.payment.CashMethod;
+import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.security.User;
 import org.maugiam.shoppingcart.wherehouse.IStockeable;
@@ -19,7 +20,7 @@ public interface IOrder extends IStockeable {
 	 *            the payment method to use for the pay
 	 * @return return the transaction builded after payment
 	 */
-	public Transaction pay(PaymentMethod payment);
+	public Transaction pay(IPaymentMethod payment);
 
 	/**
 	 * Return the order number
