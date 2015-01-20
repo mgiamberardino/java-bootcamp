@@ -1,6 +1,5 @@
 package org.maugiam.tdd.test;
 
-import static org.junit.Assert.fail;
 import junit.framework.TestCase;
 
 import org.junit.Test;
