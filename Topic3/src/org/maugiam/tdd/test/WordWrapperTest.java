@@ -21,14 +21,20 @@ public class WordWrapperTest extends TestCase{
 	@Test
 	public void testShorterThanRowLength(){
 		List<String> expected = new ArrayList<String>();
-		expected.add("Hola Mundo!");
+		expected.add("Hello World!");
 		assertEquals(expected, WordWrapper.wrap("Hola Mundo!",60));
 		expected = new ArrayList<String>();
-		expected.add("Adios mundo cruel!!");
-		assertEquals(expected, WordWrapper.wrap("Adios mundo cruel!!",60));
+		expected.add("Run Forest, Run!");
+		assertEquals(expected, WordWrapper.wrap("Adios mundo cruel!!",16));
 	}
 	
-	
+	@Test
+	public void testLargerThanRowLength(){
+		List<String> expected = new ArrayList<String>();
+		expected.add("Hello");
+		expected.add("World!");
+		assertEquals(expected, WordWrapper.wrap("Hello World!",6));
+	}
 	
 	
 	
