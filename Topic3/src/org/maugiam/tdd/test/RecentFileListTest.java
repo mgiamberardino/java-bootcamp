@@ -4,6 +4,7 @@
 package org.maugiam.tdd.test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -41,11 +42,31 @@ public class RecentFileListTest extends TestCase{
 	@Test
 	public void testAddOnOppening(){
 		recent.addOpenedFile("C:\folder\file1.test");
-		ArrayList<String> expected = new ArrayList<String>();
+		List<String> expected = new ArrayList<String>();
 		expected.add("C:\folder\file1.test");
 		assertEquals(expected,recent.getRecentList());
 	}
 	
+	@Test
+	public void testInsertionOrder(){
+		recent.addOpenedFile("C:\folder\file1.test");
+		recent.addOpenedFile("C:\folder\file2.test");
+		List<String> expected = new LinkedList<String>();
+		expected.add("C:\folder\file2.test");
+		expected.add("C:\folder\file1.test");
+		assertEquals(expected,recent.getRecentList());
+	}
+	
+	@Test
+	public void testNoDuplicates(){
+		recent.addOpenedFile("C:\folder\file1.test");
+		recent.addOpenedFile("C:\folder\file2.test");
+		recent.addOpenedFile("C:\folder\file1.test");
+		List<String> expected = new LinkedList<String>();
+		expected.add("C:\folder\file1.test");
+		expected.add("C:\folder\file2.test");
+		assertEquals(expected,recent.getRecentList());
+	}
 	
 	
 	
