@@ -36,6 +36,14 @@ public class WordWrapperTest extends TestCase{
 		assertEquals(expected, WordWrapper.wrap("Hello World!",6));
 	}
 	
+	@Test
+	public void testTwoWordsInTheRowLength(){
+		List<String> expected = new ArrayList<String>();
+		expected.add("a b");
+		expected.add("c d");
+		expected.add("e f");
+		assertEquals(expected, WordWrapper.wrap("a b c d e f",3));
+	}
 	
 	
 }
