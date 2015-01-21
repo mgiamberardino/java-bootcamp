@@ -22,10 +22,10 @@ public class WordWrapperTest extends TestCase{
 	public void testShorterThanRowLength(){
 		List<String> expected = new ArrayList<String>();
 		expected.add("Hello World!");
-		assertEquals(expected, WordWrapper.wrap("Hola Mundo!",60));
+		assertEquals(expected, WordWrapper.wrap("Hello World!",60));
 		expected = new ArrayList<String>();
 		expected.add("Run Forest, Run!");
-		assertEquals(expected, WordWrapper.wrap("Adios mundo cruel!!",16));
+		assertEquals(expected, WordWrapper.wrap("Run Forest, Run!",16));
 	}
 	
 	@Test
@@ -43,6 +43,17 @@ public class WordWrapperTest extends TestCase{
 		expected.add("c d");
 		expected.add("e f");
 		assertEquals(expected, WordWrapper.wrap("a b c d e f",3));
+	}
+	
+	@Test
+	public void testWordsLargerThanRowLength(){
+		List<String> expected = new ArrayList<String>();
+		expected.add("Excell");
+		expected.add("ent");
+		expected.add("bottle");
+		expected.add("of");
+		expected.add("wine.");
+		assertEquals(expected, WordWrapper.wrap("Excellent bottle of wine.",6));
 	}
 	
 	
