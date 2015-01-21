@@ -29,7 +29,7 @@ public class WordWrapperTest extends TestCase{
 	}
 	
 	@Test
-	public void testLargerThanRowLength(){
+	public void testWordsShorterThanRowLength(){
 		List<String> expected = new ArrayList<String>();
 		expected.add("Hello");
 		expected.add("World!");
