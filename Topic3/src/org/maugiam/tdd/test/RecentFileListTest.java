@@ -3,6 +3,9 @@
  */
 package org.maugiam.tdd.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import junit.framework.TestCase;
 
 import org.junit.Before;
@@ -30,6 +33,10 @@ public class RecentFileListTest extends TestCase{
 		assertNotNull(recent);
 	}
 
-	
+	@Test
+	public void testEmptyListOnFirstTime(){
+		List<String> list = new ArrayList<String>();
+		assertEquals(list, recent.getRecentList());
+	}
 	
 }
