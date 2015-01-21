@@ -15,10 +15,10 @@ public class RecentFileList {
 
 	protected Integer limit;
 	protected LinkedList<String> fileList;
-	
+
 	public RecentFileList(Integer limit) {
 		this.fileList = new LinkedList<String>();
-		this.limit=limit;
+		this.limit = limit;
 	}
 
 	public List<String> getRecentList() {
@@ -27,8 +27,8 @@ public class RecentFileList {
 
 	public void addOpenedFile(String filePath) {
 		int index = fileList.indexOf(filePath);
-		if(index<0){
-			if(fileList.size()>=limit)
+		if (index < 0) {
+			if (fileList.size() >= limit)
 				fileList.removeLast();
 			fileList.push(filePath);
 		} else {
