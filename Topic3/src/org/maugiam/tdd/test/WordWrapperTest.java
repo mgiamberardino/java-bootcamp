@@ -56,5 +56,10 @@ public class WordWrapperTest extends TestCase{
 		assertEquals(expected, WordWrapper.wrap("Excellent bottle of wine.",6));
 	}
 	
+	@Test
+	public void testMixingAllBeforeTests(){
+		
+	}
+	
 	
 }
