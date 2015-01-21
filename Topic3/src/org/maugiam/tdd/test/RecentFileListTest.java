@@ -35,8 +35,18 @@ public class RecentFileListTest extends TestCase{
 
 	@Test
 	public void testEmptyListOnFirstTime(){
-		List<String> list = new ArrayList<String>();
-		assertEquals(list, recent.getRecentList());
+		assertEquals(new ArrayList<String>(), recent.getRecentList());
 	}
+	
+	@Test
+	public void testAddOnOppening(){
+		recent.addOpenedFile("C:\folder\file1.test");
+		ArrayList<String> expected = new ArrayList<String>();
+		expected.add("C:\folder\file1.test");
+		assertEquals(expected,recent.getRecentList());
+	}
+	
+	
+	
 	
 }
