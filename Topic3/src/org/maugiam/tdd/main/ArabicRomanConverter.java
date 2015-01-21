@@ -3,6 +3,9 @@
  */
 package org.maugiam.tdd.main;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import org.maugiam.collections.BidirectionalHashMap;
 
 /**
@@ -30,15 +33,16 @@ public class ArabicRomanConverter {
 		numbers.put("M", 1000);
 	}
 
-	private static int[] orderedValues = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
-
 	public static String toRoman(Integer number) {
 		String roman = "";
+		ArrayList<Integer> list = new ArrayList<Integer>(numbers.values());
+		Collections.sort(list);
+		Collections.reverse(list);
 		Integer N = number;
-		for (int i = 0; i < orderedValues.length; i++) {
-			while (N >= orderedValues[i]) {
-				roman += numbers.getKey(orderedValues[i]);
-				N -= orderedValues[i];
+		for ( Integer i: list){
+			while (N >= i) {
+				roman += numbers.getKey(i);
+				N -= i;
 			}
 		}
 		System.out.println(roman);
