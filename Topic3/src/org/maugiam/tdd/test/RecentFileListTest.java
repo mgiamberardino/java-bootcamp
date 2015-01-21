@@ -26,7 +26,7 @@ public class RecentFileListTest extends TestCase{
 	 */
 	@Before
 	public void setUp() throws Exception {
-		recent=new RecentFileList(15);
+		recent=new RecentFileList(5);
 	}
 
 	@Test
@@ -64,6 +64,22 @@ public class RecentFileListTest extends TestCase{
 		recent.addOpenedFile("C:\folder\file1.test");
 		List<String> expected = new LinkedList<String>();
 		expected.add("C:\folder\file1.test");
+		expected.add("C:\folder\file2.test");
+		assertEquals(expected,recent.getRecentList());
+	}
+	
+	public void testFullList(){
+		recent.addOpenedFile("C:\folder\file1.test");
+		recent.addOpenedFile("C:\folder\file2.test");
+		recent.addOpenedFile("C:\folder\file3.test");
+		recent.addOpenedFile("C:\folder\file4.test");
+		recent.addOpenedFile("C:\folder\file5.test");
+		recent.addOpenedFile("C:\folder\file6.test");
+		List<String> expected = new LinkedList<String>();
+		expected.add("C:\folder\file6.test");
+		expected.add("C:\folder\file5.test");
+		expected.add("C:\folder\file4.test");
+		expected.add("C:\folder\file3.test");
 		expected.add("C:\folder\file2.test");
 		assertEquals(expected,recent.getRecentList());
 	}

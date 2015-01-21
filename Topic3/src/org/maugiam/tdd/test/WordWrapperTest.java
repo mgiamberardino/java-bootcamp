@@ -56,7 +56,7 @@ public class WordWrapperTest extends TestCase {
 	}
 
 	@Test
-	public void testMixingAllBeforeTests() {
+	public void testMixingAllInOneTest() {
 		List<String> expected = new ArrayList<String>();
 		expected.add("This is");
 		expected.add("a kind");
