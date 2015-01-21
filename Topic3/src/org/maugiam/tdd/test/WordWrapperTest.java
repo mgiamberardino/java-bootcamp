@@ -14,21 +14,11 @@ import org.maugiam.tdd.main.WordWrapper;
  *
  */
 public class WordWrapperTest extends TestCase{
-
-	protected WordWrapper wrapper;
 	
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-		wrapper= new WordWrapper();
-	}
 
 	@Test
-	public void testCreateWordWrapper() throws Exception{
-		assertNotNull(wrapper);
+	public void testShorterThan60(){
+		WordWrapper.wrap("Hola Mundo!");
 	}
-	
 	
 }
