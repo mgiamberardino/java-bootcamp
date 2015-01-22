@@ -1,13 +1,14 @@
 package org.maugiam.tdd.main;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class AmountConverter {
 
-	protected HashMap<Integer, String> numbers;
-	protected HashMap<Integer, String> tenNames;
+	protected static Map<Integer, String> numbers;
+	protected static Map<Integer, String> tenNames;
 
-	public AmountConverter() {
+	static {
 		numbers = new HashMap<Integer, String>();
 		numbers.put(new Integer(0), "zero");
 		numbers.put(new Integer(1), "one");
@@ -24,7 +25,7 @@ public class AmountConverter {
 		numbers.put(new Integer(12), "twelve");
 		numbers.put(new Integer(13), "thirteen");
 		numbers.put(new Integer(14), "fourteen");
-		numbers.put(new Integer(15), "fiveteen");
+		numbers.put(new Integer(15), "fifteen");
 		numbers.put(new Integer(16), "sixteen");
 		numbers.put(new Integer(17), "seventeen");
 		numbers.put(new Integer(18), "eighteen");
@@ -41,26 +42,30 @@ public class AmountConverter {
 
 	}
 
-	public String convert(Double amount) {
+	public static String convert(Double amount) {
 		Integer intNumber = new Integer((int) Math.floor(amount));
 		Integer hundredUnit = (intNumber % 1000) / 100;
 		Integer thousandUnit = (intNumber % 10000) / 1000;
 		Integer decNumber = new Integer((int) Math.round((amount - intNumber) * 100));
 		String text = " dollars";
-		if (amount.equals(1.0))
+		if (amount.equals(1.0)){
 			text = " dollar";
-		if (!decNumber.equals(0))
+		}
+		if (!decNumber.equals(0)){
 			text = " and " + (decNumber % 100) / 10 + "" + (decNumber % 10) + "/100" + text;
+		}
 		text = getTenUnitText(intNumber) + text;
-		if (!hundredUnit.equals(new Integer(0)))
+		if (!hundredUnit.equals(new Integer(0))){
 			text = numbers.get(hundredUnit) + " hundred " + text;
-		if (!thousandUnit.equals(new Integer(0)))
+		}
+		if (!thousandUnit.equals(new Integer(0))){
 			text = numbers.get(thousandUnit) + " thousand " + text;
+		}
 		String capitalLetter = text.substring(0, 1).toUpperCase();
 		return capitalLetter + text.substring(1);
 	}
 
-	private String getTenUnitText(Integer intNumber) {
+	private static String getTenUnitText(Integer intNumber) {
 		Integer unit = intNumber % 10;
 		Integer tenUnit = (intNumber % 100) / 10;
 		if (tenUnit.equals(new Integer(1))) {
@@ -68,12 +73,12 @@ public class AmountConverter {
 		}
 		String tenName = tenNames.get(tenUnit);
 		String unitName = numbers.get(unit);
-		if ((!unit.equals(new Integer(0))) && (!tenUnit.equals(new Integer(0))))
+		if ((!unit.equals(new Integer(0))) && (!tenUnit.equals(new Integer(0)))){
 			return tenName + "-" + unitName;
-		else if (!unit.equals(new Integer(0)))
+		} else if (!unit.equals(new Integer(0))){
 			return unitName;
-		else
+		}else{
 			return tenName;
+		}
 	}
-
 }

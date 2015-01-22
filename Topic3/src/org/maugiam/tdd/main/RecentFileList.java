@@ -3,7 +3,6 @@
  */
 package org.maugiam.tdd.main;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -28,8 +27,9 @@ public class RecentFileList {
 	public void addOpenedFile(String filePath) {
 		int index = fileList.indexOf(filePath);
 		if (index < 0) {
-			if (fileList.size() >= limit)
+			if (fileList.size() >= limit){
 				fileList.removeLast();
+			}
 			fileList.push(filePath);
 		} else {
 			fileList.push(fileList.remove(index));

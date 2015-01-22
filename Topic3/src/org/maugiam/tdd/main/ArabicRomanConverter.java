@@ -5,8 +5,10 @@ package org.maugiam.tdd.main;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import org.maugiam.collections.BidirectionalHashMap;
+import org.maugiam.collections.BidirectionalMap;
 
 /**
  * @author Mauro J Giamberardino
@@ -14,7 +16,7 @@ import org.maugiam.collections.BidirectionalHashMap;
  */
 public class ArabicRomanConverter {
 
-	protected static BidirectionalHashMap<String, Integer> numbers;
+	protected static BidirectionalMap<String, Integer> numbers;
 
 	static {
 		numbers = new BidirectionalHashMap<String, Integer>();
@@ -35,7 +37,7 @@ public class ArabicRomanConverter {
 
 	public static String toRoman(Integer number) {
 		String roman = "";
-		ArrayList<Integer> list = new ArrayList<Integer>(numbers.values());
+		List<Integer> list = new ArrayList<Integer>(numbers.values());
 		Collections.sort(list);
 		Collections.reverse(list);
 		Integer N = number;

@@ -14,21 +14,23 @@ import java.util.StringTokenizer;
 public class WordWrapper {
 
 	public static List<String> wrap(String string, Integer rowLength) {
-		ArrayList<String> res = new ArrayList<String>();
+		List<String> res = new ArrayList<String>();
 		StringTokenizer tok = new StringTokenizer(string, " ");
-		if (string.length() <= rowLength)
+		if (string.length() <= rowLength){
 			res.add(string);
+		}
 		else {
 			String wordAux = "";
 			while (tok.hasMoreTokens()) {
 				String next = tok.nextToken();
-				if ((!wordAux.equals("")) && ((wordAux.length() + next.length() + 1) > rowLength)) {
+				if ((!"".equals(wordAux)) && ((wordAux.length() + next.length() + 1) > rowLength)) {
 					res.add(wordAux);
 					wordAux = "";
 				}
 				if (next.length() <= rowLength) {
-					if (wordAux.length() > 0)
+					if (wordAux.length() > 0){
 						wordAux += " ";
+					}
 					wordAux += next;
 				} else {
 					String trim = next;
@@ -39,8 +41,9 @@ public class WordWrapper {
 					wordAux = trim;
 				}
 			}
-			if (!wordAux.equals(""))
+			if (!"".equals(wordAux)){
 				res.add(wordAux);
+			}
 		}
 		return res;
 	}
