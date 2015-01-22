@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <interface id="1" language="java" name="org.maugiam.shoppingcart.wherehouse.IItem" project="Topic1" 
-    file="/Topic1/src/org/maugiam/shoppingcart/wherehouse/IItem.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="1" language="java" name="org.maugiam.shoppingcart.wherehouse.IOffer" project="Topic1" 
+    file="/Topic1/src/org/maugiam/shoppingcart/wherehouse/IOffer.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="210" x="89" y="-4"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -74,23 +74,22 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="9" language="java" name="org.maugiam.shoppingcart.purchase.IDiscount" project="Topic1" 
-    file="/Topic1/src/org/maugiam/shoppingcart/purchase/IDiscount.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="137" x="958" y="351"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <realization id="10">    
+  <realization id="9">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
+  <generalization id="10">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
   <association id="11">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="12" name="instance"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
+      <attribute id="12" name="instance">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
@@ -98,14 +97,6 @@
   <generalization id="14">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <realization id="15">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <generalization id="16">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

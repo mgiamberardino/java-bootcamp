@@ -5,7 +5,7 @@ package org.maugiam.shoppingcart.manager;
 
 import java.util.Vector;
 
-import org.maugiam.shoppingcart.wherehouse.IItem;
+import org.maugiam.shoppingcart.wherehouse.IOffer;
 import org.maugiam.shoppingcart.wherehouse.IStockeable;
 
 /**
@@ -26,10 +26,10 @@ public class ObsStockDecorator extends MailingListObservable implements IStockea
 	
 	/**
 	 * 
-	 * @see topic1.wherehouse.IStockeable#getItemQuantity(topic1.wherehouse.IItem)
+	 * @see topic1.wherehouse.IStockeable#getItemQuantity(IOffer.wherehouse.IItem)
 	 */
 	@Override
-	public Long getItemQuantity(IItem item) {
+	public Long getItemQuantity(IOffer item) {
 		return stock.getItemQuantity(item);
 	}
 
@@ -38,27 +38,27 @@ public class ObsStockDecorator extends MailingListObservable implements IStockea
 	 * @see topic1.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IItem> getItems() {
+	public Vector<IOffer> getItems() {
 		return stock.getItems();
 	}
 
 	/**
 	 * Notifies when an item is added to the stock
 	 * 
-	 * @see topic1.wherehouse.IStockeable#addItem(topic1.wherehouse.IItem, java.lang.Long)
+	 * @see topic1.wherehouse.IStockeable#addItem(IOffer.wherehouse.IItem, java.lang.Long)
 	 */
 	@Override
-	public void addItem(IItem item, Long quantity) {
+	public void addItem(IOffer item, Long quantity) {
 		notifyObservers(new String(quantity + " item/offer "+ item.getCode() +" was added to the stock."));
 		stock.addItem(item, quantity);
 	}
 
 	/**
 	 * 
-	 * @see topic1.wherehouse.IStockeable#removeItem(topic1.wherehouse.IItem, java.lang.Long)
+	 * @see topic1.wherehouse.IStockeable#removeItem(IOffer.wherehouse.IItem, java.lang.Long)
 	 */
 	@Override
-	public Boolean removeItem(IItem item, Long quantity) {
+	public Boolean removeItem(IOffer item, Long quantity) {
 		return stock.removeItem(item, quantity);
 	}
 

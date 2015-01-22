@@ -16,14 +16,14 @@ public interface IStockeable {
 	 * @param item
 	 *            the item to know his quantity
 	 */
-	public Long getItemQuantity(IItem item);
+	public Long getItemQuantity(IOffer item);
 
 	/**
 	 * Return a collections of items without their quantities
 	 * 
 	 * @return the items
 	 */
-	public Vector<IItem> getItems();
+	public Vector<IOffer> getItems();
 
 	/**
 	 * Adds items to the stock
@@ -34,7 +34,7 @@ public interface IStockeable {
 	 * @param quantity
 	 *            the quantity of the item to remove
 	 */
-	public void addItem(IItem item, Long quantity);
+	public void addItem(IOffer item, Long quantity);
 
 	/**
 	 * Returns true if there was enough items, else return false.
@@ -46,6 +46,6 @@ public interface IStockeable {
 	 *            the quantity of the item to remove
 	 * @return if the item was removed
 	 */
-	public Boolean removeItem(IItem item, Long quantity);
+	public Boolean removeItem(IOffer item, Long quantity);
 
 }

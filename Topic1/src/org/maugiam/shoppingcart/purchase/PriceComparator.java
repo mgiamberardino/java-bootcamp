@@ -2,7 +2,7 @@ package org.maugiam.shoppingcart.purchase;
 
 import java.util.Comparator;
 
-import org.maugiam.shoppingcart.wherehouse.IItem;
+import org.maugiam.shoppingcart.wherehouse.IOffer;
 
 /**
  * This is a calss that implements a comparator for IItem, this is part of an
@@ -11,7 +11,7 @@ import org.maugiam.shoppingcart.wherehouse.IItem;
  * @author Mauro J Giamberardino
  *
  */
-public class PriceComparator implements Comparator<IItem> {
+public class PriceComparator implements Comparator<IOffer> {
 
 	protected Boolean inverse;
 
@@ -28,7 +28,7 @@ public class PriceComparator implements Comparator<IItem> {
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
 	@Override
-	public int compare(IItem arg0, IItem arg1) {
+	public int compare(IOffer arg0, IOffer arg1) {
 		// TODO Auto-generated method stub
 		int res = 0;
 		if (arg0.getPrice() > arg1.getPrice())

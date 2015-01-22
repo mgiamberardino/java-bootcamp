@@ -7,7 +7,7 @@ import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.purchase.IOrder;
 import org.maugiam.shoppingcart.security.User;
-import org.maugiam.shoppingcart.wherehouse.IItem;
+import org.maugiam.shoppingcart.wherehouse.IOffer;
 
 /**
  * This decorator adds the observable functionality to the Orders
@@ -43,10 +43,10 @@ public class ObsOrderDecorator extends MailingListObservable implements IOrder {
 	 * Notifies when an item is added
 	 * 
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#addItem(org.maugiam.
-	 *      shoppingcart.wherehouse.IItem, java.lang.Long)
+	 *      shoppingcart.wherehouse.IOffer, java.lang.Long)
 	 */
 	@Override
-	public void addItem(IItem item, Long quantity) {
+	public void addItem(IOffer item, Long quantity) {
 		notifyObservers(new String(quantity + " item/offer " + item.getCode() + " was added to the " + order.getOrderNumber() + " order."));
 		order.addItem(item, quantity);
 	}
@@ -72,10 +72,10 @@ public class ObsOrderDecorator extends MailingListObservable implements IOrder {
 	/**
 	 * 
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItemQuantity(org.maugiam
-	 *      .shoppingcart.wherehouse.IItem)
+	 *      .shoppingcart.wherehouse.IOffer)
 	 */
 	@Override
-	public Long getItemQuantity(IItem item) {
+	public Long getItemQuantity(IOffer item) {
 		return order.getItemQuantity(item);
 	}
 
@@ -84,17 +84,17 @@ public class ObsOrderDecorator extends MailingListObservable implements IOrder {
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IItem> getItems() {
+	public Vector<IOffer> getItems() {
 		return order.getItems();
 	}
 
 	/**
 	 *
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#removeItem(org.maugiam
-	 *      .shoppingcart.wherehouse.IItem, java.lang.Long)
+	 *      .shoppingcart.wherehouse.IOffer, java.lang.Long)
 	 */
 	@Override
-	public Boolean removeItem(IItem item, Long quantity) {
+	public Boolean removeItem(IOffer item, Long quantity) {
 		return order.removeItem(item, quantity);
 	}
 

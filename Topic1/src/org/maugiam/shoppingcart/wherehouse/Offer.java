@@ -14,16 +14,16 @@ import org.maugiam.filterable.IFilter;
  * @author Mauro J Giamberardino
  *
  */
-public class Offer extends AbsItem {
+public class Offer extends AbsOffer {
 
-	HashMap<String, IItem> items;
+	HashMap<String, IOffer> items;
 
 	/**
 	 * @param code
 	 * @param name
 	 * @param items
 	 */
-	public Offer(String code, String name, HashMap<String, IItem> items) {
+	public Offer(String code, String name, HashMap<String, IOffer> items) {
 		super(code, name);
 		this.items = items;
 	}
@@ -34,7 +34,7 @@ public class Offer extends AbsItem {
 	 */
 	public Offer(String code, String name) {
 		super(code, name);
-		this.items = new HashMap<String, IItem>();
+		this.items = new HashMap<String, IOffer>();
 	}
 
 	/**
@@ -42,7 +42,7 @@ public class Offer extends AbsItem {
 	 */
 	public Offer() {
 		super();
-		this.items = new HashMap<String, IItem>();
+		this.items = new HashMap<String, IOffer>();
 	}
 
 	/**
@@ -51,17 +51,17 @@ public class Offer extends AbsItem {
 	 * @param item
 	 *            the item to add
 	 */
-	public void addItem(IItem item) {
+	public void addItem(IOffer item) {
 		items.put(item.getCode(), item);
 	}
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#getItems()
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getItems()
 	 */
 	@Override
-	public Vector<IItem> getItems() {
-		return new Vector<IItem>(items.values());
+	public Vector<IOffer> getItems() {
+		return new Vector<IOffer>(items.values());
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class Offer extends AbsItem {
 	 */
 	@Override
 	public String toString() {
-		Iterator<IItem> it = items.values().iterator();
+		Iterator<IOffer> it = items.values().iterator();
 		String out = name + "..... $ " + getPrice() + "\n";
 		while (it.hasNext()) {
 			String item = it.next().toString();
@@ -86,14 +86,14 @@ public class Offer extends AbsItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.filterable.IFilter)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
-	public Vector<IItem> find(IFilter<IItem> filter) {
-		Vector<IItem> filteredItems = new Vector<IItem>();
-		Iterator<IItem> it = items.values().iterator();
+	public Vector<IOffer> find(IFilter<IOffer> filter) {
+		Vector<IOffer> filteredItems = new Vector<IOffer>();
+		Iterator<IOffer> it = items.values().iterator();
 		while (it.hasNext()) {
-			IItem aux = it.next();
+			IOffer aux = it.next();
 			if (filter.satisfies(aux))
 				filteredItems.add(aux);
 		}
@@ -102,12 +102,12 @@ public class Offer extends AbsItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#sort(java.util.Comparator)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#sort(java.util.Comparator)
 	 */
 	@Override
-	public Vector<IItem> sort(Comparator<IItem> comparator) {
+	public Vector<IOffer> sort(Comparator<IOffer> comparator) {
 		// TODO Auto-generated method stub
-		Vector<IItem> sortedItems = new Vector<IItem>(items.values());
+		Vector<IOffer> sortedItems = new Vector<IOffer>(items.values());
 		Collections.sort(sortedItems, comparator);
 		return sortedItems;
 	}

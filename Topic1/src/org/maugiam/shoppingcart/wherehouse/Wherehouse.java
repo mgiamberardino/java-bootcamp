@@ -14,20 +14,20 @@ import java.util.Vector;
  */
 public class Wherehouse implements IStockeable {
 
-	protected HashMap<IItem, Long> items;
+	protected HashMap<IOffer, Long> items;
 	protected String name;
 
 	public Wherehouse(String name) {
-		items = new HashMap<IItem, Long>();
+		items = new HashMap<IOffer, Long>();
 		this.name = name;
 	}
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItemQuantity(org.maugiam.shoppingcart.wherehouse.IItem)
+	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItemQuantity(org.maugiam.shoppingcart.wherehouse.IOffer)
 	 */
 	@Override
-	public Long getItemQuantity(IItem item) {
+	public Long getItemQuantity(IOffer item) {
 		return items.get(item);
 	}
 
@@ -36,16 +36,16 @@ public class Wherehouse implements IStockeable {
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IItem> getItems() {
-		return new Vector<IItem>(items.keySet());
+	public Vector<IOffer> getItems() {
+		return new Vector<IOffer>(items.keySet());
 	}
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#addItem(org.maugiam.shoppingcart.wherehouse.IItem, java.lang.Long)
+	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#addItem(org.maugiam.shoppingcart.wherehouse.IOffer, java.lang.Long)
 	 */
 	@Override
-	public void addItem(IItem item, Long quantity) {
+	public void addItem(IOffer item, Long quantity) {
 		if (items.containsKey(item)) {
 			Long q = items.get(item);
 			items.put(item, q + quantity);
@@ -55,10 +55,10 @@ public class Wherehouse implements IStockeable {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#removeItem(org.maugiam.shoppingcart.wherehouse.IItem, java.lang.Long)
+	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#removeItem(org.maugiam.shoppingcart.wherehouse.IOffer, java.lang.Long)
 	 */
 	@Override
-	public Boolean removeItem(IItem item, Long quantity) {
+	public Boolean removeItem(IOffer item, Long quantity) {
 		if (items.containsKey(item)) {
 			Long q = items.get(item);
 			if (q >= quantity) {
@@ -88,7 +88,7 @@ public class Wherehouse implements IStockeable {
 	 * @param items
 	 *            the items to set
 	 */
-	public void setItems(HashMap<IItem, Long> items) {
+	public void setItems(HashMap<IOffer, Long> items) {
 		this.items = items;
 	}
 

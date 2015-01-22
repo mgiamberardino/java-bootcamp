@@ -13,7 +13,7 @@ import java.util.Observable;
  * @author Mauro J Giamberardino
  *
  */
-public abstract class AbsItem extends Observable implements IItem {
+public abstract class AbsOffer extends Observable implements IOffer {
 
 	protected String code;
 	protected String name;
@@ -25,7 +25,7 @@ public abstract class AbsItem extends Observable implements IItem {
 	 * @param name
 	 *            the name of the item
 	 */
-	public AbsItem(String code, String name) {
+	public AbsOffer(String code, String name) {
 		this.code = code;
 		this.name = name;
 	}
@@ -33,14 +33,14 @@ public abstract class AbsItem extends Observable implements IItem {
 	/**
 	 * Empty Constructor
 	 */
-	public AbsItem() {
+	public AbsOffer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#getPrice()
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getPrice()
 	 */
 	@Override
 	public Double getPrice() {
@@ -49,7 +49,7 @@ public abstract class AbsItem extends Observable implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#setPrice(java.lang.Double)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#setPrice(java.lang.Double)
 	 */
 	@Override
 	public void setPrice(Double price) {
@@ -58,7 +58,7 @@ public abstract class AbsItem extends Observable implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#getCode()
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getCode()
 	 */
 	@Override
 	public String getCode() {
@@ -67,7 +67,7 @@ public abstract class AbsItem extends Observable implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#setCode(java.lang.String)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#setCode(java.lang.String)
 	 */
 	@Override
 	public void setCode(String code) {
@@ -76,7 +76,7 @@ public abstract class AbsItem extends Observable implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#getName()
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getName()
 	 */
 	@Override
 	public String getName() {
@@ -85,7 +85,7 @@ public abstract class AbsItem extends Observable implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#setName(java.lang.String)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#setName(java.lang.String)
 	 */
 	@Override
 	public void setName(String name) {
@@ -99,7 +99,7 @@ public abstract class AbsItem extends Observable implements IItem {
 	@Override
 	public boolean equals(Object o) {
 		try {
-			IItem item = (IItem) o;
+			IOffer item = (IOffer) o;
 			return (item.getCode().equals(code));
 		} catch (ClassCastException e) {
 			e.printStackTrace();

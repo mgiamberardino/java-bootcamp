@@ -5,7 +5,7 @@ import java.util.Vector;
 import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.security.User;
-import org.maugiam.shoppingcart.wherehouse.IItem;
+import org.maugiam.shoppingcart.wherehouse.IOffer;
 /**
  * The discount model is implemented by an adapter pattern.
  * 
@@ -22,22 +22,22 @@ public abstract class AbsDiscount implements IOrder {
 	}
 
 	@Override
-	public Long getItemQuantity(IItem item) {
+	public Long getItemQuantity(IOffer item) {
 		return order.getItemQuantity(item);
 	}
 
 	@Override
-	public Vector<IItem> getItems() {
+	public Vector<IOffer> getItems() {
 		return order.getItems();
 	}
 
 	@Override
-	public void addItem(IItem item, Long quantity) {
+	public void addItem(IOffer item, Long quantity) {
 		order.addItem(item, quantity);
 	}
 
 	@Override
-	public Boolean removeItem(IItem item, Long quantity) {
+	public Boolean removeItem(IOffer item, Long quantity) {
 		return order.removeItem(item, quantity);
 	}
 

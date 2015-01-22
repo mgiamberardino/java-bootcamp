@@ -11,7 +11,7 @@ import org.maugiam.filterable.IFilter;
  * @author Mauro J Giamberardino
  *
  */
-public interface IItem {
+public interface IOffer {
 
 	/**
 	 * Returns the price of an Item
@@ -23,7 +23,8 @@ public interface IItem {
 	/**
 	 * Set the price of an Item
 	 * 
-	 * @param price the price to set
+	 * @param price
+	 *            the price to set
 	 */
 	public void setPrice(Double price);
 
@@ -32,23 +33,25 @@ public interface IItem {
 	 * 
 	 * @return the items list
 	 */
-	public Vector<IItem> getItems();
+	public Vector<IOffer> getItems();
 
 	/**
-	 * Make a search for an item 
+	 * Make a search for an item
 	 * 
-	 * @param filter the criteria to search
+	 * @param filter
+	 *            the criteria to search
 	 * @return a collection with the search results
 	 */
-	public Vector<IItem> find(IFilter<IItem> filter);
+	public Vector<IOffer> find(IFilter<IOffer> filter);
 
 	/**
 	 * Orders a collection of items
 	 * 
-	 * @param comparator the criteria to order
+	 * @param comparator
+	 *            the criteria to order
 	 * @return a new collection ordered by the criteria
 	 */
-	public Vector<IItem> sort(Comparator<IItem> comparator);
+	public Vector<IOffer> sort(Comparator<IOffer> comparator);
 
 	/**
 	 * Returns the code of an Item
@@ -60,7 +63,8 @@ public interface IItem {
 	/**
 	 * Set the code of an Item
 	 * 
-	 * @param code the code to set
+	 * @param code
+	 *            the code to set
 	 */
 	public void setCode(String code);
 
@@ -74,14 +78,16 @@ public interface IItem {
 	/**
 	 * Set the name of an Item
 	 * 
-	 * @param name the name to set
+	 * @param name
+	 *            the name to set
 	 */
 	public void setName(String name);
 
 	/**
 	 * Compares this Item with another and returns if are equals
 	 * 
-	 * @param obj the object to compare to
+	 * @param obj
+	 *            the object to compare to
 	 * @return if they're equals
 	 */
 	public boolean equals(Object obj);

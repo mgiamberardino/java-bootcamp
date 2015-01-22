@@ -11,7 +11,7 @@ import org.maugiam.filterable.IFilter;
  * @author Mauro J Giamberardino
  *
  */
-public class Item extends AbsItem implements IItem {
+public class Item extends AbsOffer implements IOffer {
 
 	protected Double price;
 
@@ -43,12 +43,12 @@ public class Item extends AbsItem implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#getItems()
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getItems()
 	 */
 	@Override
-	public Vector<IItem> getItems() {
+	public Vector<IOffer> getItems() {
 		// TODO Auto-generated method stub
-		Vector<IItem> items = new Vector<IItem>();
+		Vector<IOffer> items = new Vector<IOffer>();
 		items.add(this);
 		return items;
 	}
@@ -64,12 +64,12 @@ public class Item extends AbsItem implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#find(org.maugiam.filterable.IFilter)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
-	public Vector<IItem> find(IFilter<IItem> filter) {
+	public Vector<IOffer> find(IFilter<IOffer> filter) {
 		// TODO Auto-generated method stub
-		Vector<IItem> items = new Vector<IItem>();
+		Vector<IOffer> items = new Vector<IOffer>();
 		if (filter.satisfies(this))
 			items.add(this);
 		return items;
@@ -77,12 +77,12 @@ public class Item extends AbsItem implements IItem {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IItem#sort(java.util.Comparator)
+	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#sort(java.util.Comparator)
 	 */
 	@Override
-	public Vector<IItem> sort(Comparator<IItem> comparator) {
+	public Vector<IOffer> sort(Comparator<IOffer> comparator) {
 		// TODO Auto-generated method stub
-		Vector<IItem> items = new Vector<IItem>();
+		Vector<IOffer> items = new Vector<IOffer>();
 		items.add(this);
 		return items;
 	}
