@@ -1,6 +1,6 @@
 package org.maugiam.shoppingcart.wherehouse;
 
-import java.util.Vector;
+import java.util.List;
 
 /**
  * This interface represents the behavior of the classes that stocks items
@@ -23,7 +23,7 @@ public interface IStockeable {
 	 * 
 	 * @return the items
 	 */
-	public Vector<IOffer> getItems();
+	public List<IOffer> getItems();
 
 	/**
 	 * Adds items to the stock

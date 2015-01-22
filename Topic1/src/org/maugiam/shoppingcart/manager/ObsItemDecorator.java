@@ -1,6 +1,7 @@
 package org.maugiam.shoppingcart.manager;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Vector;
 
 import org.maugiam.filterable.IFilter;
@@ -56,7 +57,7 @@ public class ObsItemDecorator extends MailingListObservable implements IOffer {
 	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getItems()
 	 */
 	@Override
-	public Vector<IOffer> getItems() {
+	public List<IOffer> getItems() {
 		return item.getItems();
 	}
 
@@ -65,7 +66,7 @@ public class ObsItemDecorator extends MailingListObservable implements IOffer {
 	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
-	public Vector<IOffer> find(IFilter filter) {
+	public List<IOffer> find(IFilter<IOffer> filter) {
 		return item.find(filter);
 	}
 
@@ -74,7 +75,7 @@ public class ObsItemDecorator extends MailingListObservable implements IOffer {
 	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#sort(java.util.Comparator)
 	 */
 	@Override
-	public Vector<IOffer> sort(Comparator<IOffer> comparator) {
+	public List<IOffer> sort(Comparator<IOffer> comparator) {
 		return item.sort(comparator);
 	}
 

@@ -1,6 +1,7 @@
 package org.maugiam.shoppingcart.wherehouse;
 
 import java.util.Comparator;
+import java.util.List;
 import java.util.Vector;
 
 import org.maugiam.filterable.IFilter;
@@ -33,7 +34,7 @@ public interface IOffer {
 	 * 
 	 * @return the items list
 	 */
-	public Vector<IOffer> getItems();
+	public List<IOffer> getItems();
 
 	/**
 	 * Make a search for an item
@@ -42,7 +43,7 @@ public interface IOffer {
 	 *            the criteria to search
 	 * @return a collection with the search results
 	 */
-	public Vector<IOffer> find(IFilter<IOffer> filter);
+	public List<IOffer> find(IFilter<IOffer> filter);
 
 	/**
 	 * Orders a collection of items
@@ -51,7 +52,7 @@ public interface IOffer {
 	 *            the criteria to order
 	 * @return a new collection ordered by the criteria
 	 */
-	public Vector<IOffer> sort(Comparator<IOffer> comparator);
+	public List<IOffer> sort(Comparator<IOffer> comparator);
 
 	/**
 	 * Returns the code of an Item

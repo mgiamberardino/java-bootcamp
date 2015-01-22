@@ -1,8 +1,7 @@
 package org.maugiam.shoppingcart.manager;
 
-import java.util.Vector;
+import java.util.List;
 
-import org.maugiam.shoppingcart.payment.CashMethod;
 import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.purchase.IOrder;
@@ -84,7 +83,7 @@ public class ObsOrderDecorator extends MailingListObservable implements IOrder {
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IOffer> getItems() {
+	public List<IOffer> getItems() {
 		return order.getItems();
 	}
 

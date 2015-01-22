@@ -2,7 +2,7 @@ package org.maugiam.shoppingcart.purchase;
 
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Vector;
+import java.util.List;
 
 import org.maugiam.shoppingcart.wherehouse.IOffer;
 
@@ -17,13 +17,13 @@ public class FirstPercentageDiscount extends PercentageDiscount {
 
 	protected Comparator<IOffer> criteria;
 
-	public FirstPercentageDiscount(Double percentage, Comparator<IOffer> criteria, IOrder order) {
-		super(percentage,order);
+	public FirstPercentageDiscount(Double percentage, Comparator<IOffer> criteria, IDiscount discount) {
+		super(percentage, discount);
 		this.criteria = criteria;
 	}
 
-	public FirstPercentageDiscount(Double percentage,IOrder order) {
-		super(percentage,order);
+	public FirstPercentageDiscount(Double percentage, IDiscount discount) {
+		super(percentage, discount);
 	}
 
 	/**
@@ -32,9 +32,11 @@ public class FirstPercentageDiscount extends PercentageDiscount {
 	 */
 	@Override
 	public Double getTotal() {
-		Vector<IOffer> items = order.getItems();
+		List<IOffer> items = discount.getItems();
 		Collections.sort(items, criteria);
-		return items.firstElement().getPrice() * (1 - percentage);
+		if (items.size() == 0)
+			return 0.0;
+		return items.get(0).getPrice() * (1 - percentage);
 	}
 
 	/**

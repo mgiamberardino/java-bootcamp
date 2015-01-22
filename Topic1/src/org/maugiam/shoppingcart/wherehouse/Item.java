@@ -1,6 +1,8 @@
 package org.maugiam.shoppingcart.wherehouse;
 
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Vector;
 
 import org.maugiam.filterable.IFilter;
@@ -38,7 +40,6 @@ public class Item extends AbsOffer implements IOffer {
 	 */
 	public Item() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -46,9 +47,8 @@ public class Item extends AbsOffer implements IOffer {
 	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#getItems()
 	 */
 	@Override
-	public Vector<IOffer> getItems() {
-		// TODO Auto-generated method stub
-		Vector<IOffer> items = new Vector<IOffer>();
+	public List<IOffer> getItems() {
+		List<IOffer> items = new ArrayList<IOffer>();
 		items.add(this);
 		return items;
 	}
@@ -67,9 +67,8 @@ public class Item extends AbsOffer implements IOffer {
 	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#find(org.maugiam.filterable.IFilter)
 	 */
 	@Override
-	public Vector<IOffer> find(IFilter<IOffer> filter) {
-		// TODO Auto-generated method stub
-		Vector<IOffer> items = new Vector<IOffer>();
+	public List<IOffer> find(IFilter<IOffer> filter) {
+		List<IOffer> items = new ArrayList<IOffer>();
 		if (filter.satisfies(this))
 			items.add(this);
 		return items;
@@ -80,9 +79,8 @@ public class Item extends AbsOffer implements IOffer {
 	 * @see org.maugiam.shoppingcart.wherehouse.IOffer#sort(java.util.Comparator)
 	 */
 	@Override
-	public Vector<IOffer> sort(Comparator<IOffer> comparator) {
-		// TODO Auto-generated method stub
-		Vector<IOffer> items = new Vector<IOffer>();
+	public List<IOffer> sort(Comparator<IOffer> comparator) {
+		List<IOffer> items = new ArrayList<IOffer>();
 		items.add(this);
 		return items;
 	}

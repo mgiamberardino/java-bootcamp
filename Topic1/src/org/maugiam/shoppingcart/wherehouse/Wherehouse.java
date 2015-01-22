@@ -3,11 +3,13 @@
  */
 package org.maugiam.shoppingcart.wherehouse;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Vector;
+import java.util.List;
 
 /**
- * This class implements IStockable and represents the stock wherehouse of the shopping cart
+ * This class implements IStockable and represents the stock wherehouse of the
+ * shopping cart
  * 
  * @author Mauro J Giamberardino
  *
@@ -36,13 +38,14 @@ public class Wherehouse implements IStockeable {
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IOffer> getItems() {
-		return new Vector<IOffer>(items.keySet());
+	public List<IOffer> getItems() {
+		return new ArrayList<IOffer>(items.keySet());
 	}
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#addItem(org.maugiam.shoppingcart.wherehouse.IOffer, java.lang.Long)
+	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#addItem(org.maugiam.shoppingcart.wherehouse.IOffer,
+	 *      java.lang.Long)
 	 */
 	@Override
 	public void addItem(IOffer item, Long quantity) {
@@ -55,7 +58,8 @@ public class Wherehouse implements IStockeable {
 
 	/**
 	 * 
-	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#removeItem(org.maugiam.shoppingcart.wherehouse.IOffer, java.lang.Long)
+	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#removeItem(org.maugiam.shoppingcart.wherehouse.IOffer,
+	 *      java.lang.Long)
 	 */
 	@Override
 	public Boolean removeItem(IOffer item, Long quantity) {

@@ -9,14 +9,14 @@ public class PercentageDiscount extends AbsDiscount {
 
 	protected Double percentage;
 
-	public PercentageDiscount(Double percentage,IOrder order) {
-		super(order);
+	public PercentageDiscount(Double percentage, IDiscount discount) {
+		super(discount);
 		this.percentage = percentage;
 	}
 
 	@Override
 	public Double getTotal() {
-		return order.getTotal() * (1 - percentage);
+		return discount.getTotal() * (1 - percentage);
 	}
 
 	/**

@@ -1,10 +1,10 @@
 package org.maugiam.shoppingcart.purchase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Vector;
+import java.util.List;
 
-import org.maugiam.shoppingcart.payment.CashMethod;
 import org.maugiam.shoppingcart.payment.IPaymentMethod;
 import org.maugiam.shoppingcart.payment.Transaction;
 import org.maugiam.shoppingcart.payment.TransactionFactory;
@@ -17,7 +17,7 @@ import org.maugiam.shoppingcart.wherehouse.IOffer;
  * @author Mauro J Giamberardino
  *
  */
-public class PurchaseOrder implements IOrder {
+public class PurchaseOrder implements IOrder, IDiscount {
 
 	protected Long orderNumber;
 	protected User user;
@@ -79,8 +79,8 @@ public class PurchaseOrder implements IOrder {
 	 * @see org.maugiam.shoppingcart.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IOffer> getItems() {
-		return new Vector<IOffer>(items.keySet());
+	public List<IOffer> getItems() {
+		return new ArrayList<IOffer>(items.keySet());
 	}
 
 	/**

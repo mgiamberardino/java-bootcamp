@@ -3,7 +3,7 @@
  */
 package org.maugiam.shoppingcart.manager;
 
-import java.util.Vector;
+import java.util.List;
 
 import org.maugiam.shoppingcart.wherehouse.IOffer;
 import org.maugiam.shoppingcart.wherehouse.IStockeable;
@@ -38,7 +38,7 @@ public class ObsStockDecorator extends MailingListObservable implements IStockea
 	 * @see topic1.wherehouse.IStockeable#getItems()
 	 */
 	@Override
-	public Vector<IOffer> getItems() {
+	public List<IOffer> getItems() {
 		return stock.getItems();
 	}
 
