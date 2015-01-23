@@ -3,32 +3,38 @@
  */
 package org.maugiam.apps.shoppingcart;
 
-import java.math.BigDecimal;
 import java.util.List;
+
 
 /**
  * @author Mauro J Giamberardino
  *
  */
-public interface ShoppingCart<Item> {
+public interface ShoppingCart {
 
 	/**
 	 * 
 	 * @author Mauro J Giamberardino
 	 */
-	public boolean addItem(Item item, Long quantity);
+	public void addItem(Item item);
 	
 	/**
 	 * 
 	 * @author Mauro J Giamberardino
 	 */
-	public boolean removeItem(Item item);
+	public void removeItem(Item item);
 	
 	/**
 	 * 
 	 * @author Mauro J Giamberardino
 	 */
 	public List<Item> getItems();
+	
+	/**
+	 * Returns the number of items in the cart
+	 * 
+	 */
+	public Integer getSize();
 	
 	/**
 	 * 
