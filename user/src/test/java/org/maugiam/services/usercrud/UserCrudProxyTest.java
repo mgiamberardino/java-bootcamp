@@ -4,6 +4,7 @@
 package org.maugiam.services.usercrud;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -92,6 +93,81 @@ public class UserCrudProxyTest extends TestCase {
     		Integer pos = actual.indexOf(u);
     		assertTrue(pos>-1);
     		assertEquals(u, actual.get(pos));
+    	}
+    }
+    
+    public void testUploadAndGetPhoto(){
+    	User user = new User("dorian","Mauro","Giamber");
+    	uService.createUser(user);
+    	Photo photo = new Photo("PH01","/opt/user/photos/ph01.jpg");
+    	assertTrue(uService.uploadPhoto(photo,user));
+    	List<Photo> expectedPhotos = new ArrayList<Photo>();
+    	expectedPhotos.add(photo);
+    	List<Photo> photos = uService.getPhotos(user);
+    	assertEquals(expectedPhotos.size(),photos.size());
+    	for (Photo p : expectedPhotos){
+    		assertTrue(photos.contains(p));
+    	}
+    }
+    
+    public void testAddAndGetFriends(){
+    	User user = new User("mgiamberardino","Mauro","Giamberardino");
+    	User user1 = new User("mcorrales","Manuel","Corrales");
+    	User user2 = new User("sfernandez","Sebastian","Fernandez");
+    	User user3 = new User("murruchua","Melina","Urruchua");
+    	uService.createUser(user);
+    	uService.createUser(user1);
+    	uService.createUser(user2);
+    	uService.createUser(user3);
+    	assertTrue(uService.addFriend(user1,user2));
+    	assertTrue(uService.addFriend(user1,user3));
+    	assertTrue(uService.addFriend(user1,user));
+    	assertTrue(uService.addFriend(user2,user3));
+    	List<User> expectedU1Friends = new ArrayList<User>();
+    	expectedU1Friends.add(user);
+    	expectedU1Friends.add(user2);
+    	expectedU1Friends.add(user3);
+    	List<User> expectedU2Friends = new ArrayList<User>();
+    	expectedU2Friends.add(user1);
+    	expectedU2Friends.add(user3);
+    	List<User> u1Friends = uService.getFriends(user1);
+    	List<User> u2Friends = uService.getFriends(user2);
+    	assertEquals(expectedU1Friends.size(), u1Friends.size());
+    	assertEquals(expectedU2Friends.size(), u2Friends.size());
+    	for(User u: expectedU1Friends){
+    		assertTrue(u1Friends.contains(u));
+    	}
+    	for(User u: expectedU2Friends){
+    		assertTrue(u2Friends.contains(u));
+    	}
+    }
+    
+    public void testAddAndGetLikesToPhotos(){
+    	User user = new User("mgiamberardino","Mauro","Giamberardino");
+    	User user1 = new User("mcorrales","Manuel","Corrales");
+    	User user2 = new User("sfernandez","Sebastian","Fernandez");
+    	User user3 = new User("murruchua","Melina","Urruchua"); 
+    	uService.createUser(user);
+    	uService.createUser(user1);
+    	uService.createUser(user2);
+    	uService.createUser(user3);
+    	Photo photo = new Photo("PH01","/opt/user/photos/ph01.jpg");
+    	uService.uploadPhoto(photo, user1);
+    	Like like1 = new Like(user, new Date(System.currentTimeMillis()));
+    	Like like2 = new Like(user2, new Date(System.currentTimeMillis()));
+    	Like like3 = new Like(user3, new Date(System.currentTimeMillis()));
+    	uService.addLike(photo,like1,user1);
+    	uService.addLike(photo,like2,user1);
+    	uService.addLike(photo,like3,user1);
+    	List<Like> likes = uService.getLikes(photo,user1);
+    	assertNotNull(likes);
+    	List<Like> expectedLikes = new ArrayList<Like>();
+    	expectedLikes.add(like1);
+    	expectedLikes.add(like2);
+    	expectedLikes.add(like3);
+    	assertEquals(expectedLikes.size(), likes.size());
+    	for( Like l: expectedLikes){
+    		assertTrue(likes.contains(l));
     	}
     }
 	

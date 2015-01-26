@@ -52,4 +52,30 @@ public class UserCrudProxy implements UserCrudService {
 		return service.listUsers();
 	}
 
+	public Boolean uploadPhoto(Photo photo, User user) {
+		return service.uploadPhoto(photo, user);
+	}
+
+	public List<Photo> getPhotos(User user) {
+		return service.getPhotos(user);
+	}
+
+	public boolean addFriend(User userOne, User userTwo) {
+		return service.addFriend(userOne, userTwo);
+	}
+
+	public List<User> getFriends(User user) {
+		return service.getFriends(user);
+	}
+
+	public boolean addLike(Photo photo, Like like, User owner) {
+		return service.addLike(photo, like, owner);
+	}
+
+	public List<Like> getLikes(Photo photo, User owner) {
+		return service.getLikes(photo, owner);
+	}
+
+	
+	
 }

@@ -3,6 +3,10 @@
  */
 package org.maugiam.services.usercrud;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 /**
  * @author Mauro J Giamberardino
  *
@@ -13,13 +17,20 @@ public class User {
 	private String surname;
 	private String lastname;
 	
+	List<Photo> photos;
+	List<User> friends;
+	
 	public User(String username, String surname, String lastname) {
 		this.username = username;
 		this.surname = surname;
 		this.lastname = lastname;
+		photos = new ArrayList<Photo>();
+		friends = new ArrayList<User>();
 	}
 	
 	public User() {
+		photos = new ArrayList<Photo>();
+		friends = new ArrayList<User>();
 	}
 
 	/**
@@ -79,5 +90,23 @@ public class User {
 	
 	public String toString(){
 		return username;
+	}
+
+	public void addPhoto(Photo photo) {
+		photos.add(photo);
+	}
+
+	protected List<Photo> getPhotos() {
+		return new ArrayList<Photo>(photos);
+	}
+
+	public Boolean addFriend(User u2) {
+		if (!friends.contains(u2))
+			return friends.add(u2);
+		return false;
+	}
+
+	public List<User> getFriends() {
+		return new ArrayList<User>(friends);
 	}
 }
