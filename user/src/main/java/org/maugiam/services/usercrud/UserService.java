@@ -105,10 +105,12 @@ public interface UserService {
 	public boolean addLike(Photo photo, Like like, User owner);
 
 	/**
-	 * Get the likes of  specific photo
+	 * Get the likes of specific photo
 	 * 
-	 * @param photo the photo to get the likes from
-	 * @param owner the user owner of the photo
+	 * @param photo
+	 *            the photo to get the likes from
+	 * @param owner
+	 *            the user owner of the photo
 	 * @return
 	 */
 	public List<Like> getLikes(Photo photo, User owner);

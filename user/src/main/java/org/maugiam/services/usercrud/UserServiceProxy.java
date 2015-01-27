@@ -12,11 +12,11 @@ import java.util.List;
 public class UserServiceProxy implements UserService {
 
 	UserService service;
-	
+
 	public UserServiceProxy(UserService service) {
 		this.service = service;
 	}
-	
+
 	/**
 	 * @see org.maugiam.services.usercrud.UserService#createUser(org.maugiam.services.usercrud.User)
 	 */
@@ -76,6 +76,4 @@ public class UserServiceProxy implements UserService {
 		return service.getLikes(photo, owner);
 	}
 
-	
-	
 }

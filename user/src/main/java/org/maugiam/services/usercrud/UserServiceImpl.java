@@ -14,17 +14,17 @@ import java.util.Map;
  */
 public class UserServiceImpl implements UserService {
 
-	private Map<String,User> users;
-	
+	private Map<String, User> users;
+
 	public UserServiceImpl() {
 		users = new HashMap<String, User>();
 	}
-	
+
 	/**
 	 * @see org.maugiam.services.usercrud.UserService#createUser()
 	 */
 	public User createUser(User user) {
-		if (!users.containsKey(user.getUsername())){
+		if (!users.containsKey(user.getUsername())) {
 			users.put(user.getUsername(), user);
 			return user;
 		}
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public void updateUser(User user) {
 		User updUser = users.get(user.getUsername());
-		if (updUser!=null){
+		if (updUser != null) {
 			updUser.setSurname(user.getSurname());
 			updUser.setLastname(user.getLastname());
 		}
@@ -62,12 +62,14 @@ public class UserServiceImpl implements UserService {
 
 	public Boolean uploadPhoto(Photo photo, User user) {
 		User storedUser = users.get(user.getUsername());
-		if (storedUser!=null){
+		if (storedUser != null) {
 			/*
-			 * Algorithm to upload and save the photo
-			 * maybe on an ORM Database
+			 * Algorithm to upload and save the photo maybe on an ORM Database
 			 */
-			Photo storedPhoto=new Photo(photo.getId(),photo.getPath());//Get the stored photo
+			Photo storedPhoto = new Photo(photo.getId(), photo.getPath());// Get
+																			// the
+																			// stored
+																			// photo
 			storedUser.addPhoto(storedPhoto);
 			return true;
 		}
@@ -76,7 +78,7 @@ public class UserServiceImpl implements UserService {
 
 	public List<Photo> getPhotos(User user) {
 		User storedUser = users.get(user.getUsername());
-		if (storedUser!=null){
+		if (storedUser != null) {
 			return new ArrayList<Photo>(storedUser.getPhotos());
 		}
 		return null;
@@ -85,7 +87,7 @@ public class UserServiceImpl implements UserService {
 	public boolean addFriend(User userOne, User userTwo) {
 		User u1 = users.get(userOne.getUsername());
 		User u2 = users.get(userTwo.getUsername());
-		if ((u1!=null)&&(u2!=null)){
+		if ((u1 != null) && (u2 != null)) {
 			return u1.addFriend(u2) && u2.addFriend(u1);
 		}
 		return false;
@@ -93,7 +95,7 @@ public class UserServiceImpl implements UserService {
 
 	public List<User> getFriends(User user) {
 		User storedUser = users.get(user.getUsername());
-		if (storedUser!=null){
+		if (storedUser != null) {
 			return storedUser.getFriends();
 		}
 		return null;
@@ -101,12 +103,12 @@ public class UserServiceImpl implements UserService {
 
 	public boolean addLike(Photo photo, Like like, User owner) {
 		User storedUser = users.get(owner.getUsername());
-		if (storedUser!=null){
+		if (storedUser != null) {
 			List<Photo> userPhotos = storedUser.getPhotos();
-			Integer index=userPhotos.indexOf(photo);
-			if (index>-1){
+			Integer index = userPhotos.indexOf(photo);
+			if (index > -1) {
 				Photo storedPhoto = userPhotos.get(index);
-				if (storedPhoto!=null){
+				if (storedPhoto != null) {
 					return storedPhoto.addLike(like);
 				}
 			}
@@ -116,12 +118,12 @@ public class UserServiceImpl implements UserService {
 
 	public List<Like> getLikes(Photo photo, User owner) {
 		User storedUser = users.get(owner.getUsername());
-		if (storedUser!=null){
+		if (storedUser != null) {
 			List<Photo> userPhotos = storedUser.getPhotos();
 			Integer index = userPhotos.indexOf(photo);
-			if (index>-1){
+			if (index > -1) {
 				Photo storedPhoto = userPhotos.get(index);
-				if (storedPhoto!=null){
+				if (storedPhoto != null) {
 					return storedPhoto.getLikes();
 				}
 			}

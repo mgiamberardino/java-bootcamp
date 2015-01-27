@@ -16,10 +16,10 @@ public class User {
 	private String username;
 	private String surname;
 	private String lastname;
-	
+
 	List<Photo> photos;
 	List<User> friends;
-	
+
 	public User(String username, String surname, String lastname) {
 		this.username = username;
 		this.surname = surname;
@@ -27,7 +27,7 @@ public class User {
 		photos = new ArrayList<Photo>();
 		friends = new ArrayList<User>();
 	}
-	
+
 	public User() {
 		photos = new ArrayList<Photo>();
 		friends = new ArrayList<User>();
@@ -41,7 +41,8 @@ public class User {
 	}
 
 	/**
-	 * @param username the username to set
+	 * @param username
+	 *            the username to set
 	 */
 	public void setUsername(String username) {
 		this.username = username;
@@ -55,7 +56,8 @@ public class User {
 	}
 
 	/**
-	 * @param surname the surname to set
+	 * @param surname
+	 *            the surname to set
 	 */
 	public void setSurname(String surname) {
 		this.surname = surname;
@@ -69,26 +71,27 @@ public class User {
 	}
 
 	/**
-	 * @param lastname the lastname to set
+	 * @param lastname
+	 *            the lastname to set
 	 */
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	
+
 	/**
 	 * 
 	 */
 	@Override
-	public boolean equals(Object o){
+	public boolean equals(Object o) {
 		try {
 			User user = (User) o;
 			return username.equals(user.getUsername());
-		}catch (ClassCastException e){
+		} catch (ClassCastException e) {
 		}
 		return false;
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return username;
 	}
 

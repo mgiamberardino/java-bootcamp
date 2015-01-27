@@ -171,9 +171,9 @@ public class UserCrudProxyTest extends TestCase {
     	}
     }
 
-    public void testFactoryCreation(){
-    	UserService proxy = UserServiceFactory.getRemoteServiceUsingJMS();
-    	assertNotNull(proxy);
-    }
+	public void testFactoryCreation() {
+		UserService proxy = UserServiceFactory.getRemoteServiceUsingJMS();
+		assertNotNull(proxy);
+	}
     
 }

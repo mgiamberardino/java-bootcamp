@@ -22,7 +22,7 @@ public class Photo {
 	 */
 	String path;
 	private List<Like> likes;
-	
+
 	/**
 	 * @param id
 	 * @param path
@@ -42,7 +42,8 @@ public class Photo {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(String id) {
 		this.id = id;
@@ -56,22 +57,23 @@ public class Photo {
 	}
 
 	/**
-	 * @param path the path to set
+	 * @param path
+	 *            the path to set
 	 */
 	public void setPath(String path) {
 		this.path = path;
 	}
 
-	public boolean equals(Object o){
-		try{
+	public boolean equals(Object o) {
+		try {
 			Photo photo = (Photo) o;
 			return id.equals(photo.getId());
-		}catch (ClassCastException e){
+		} catch (ClassCastException e) {
 		}
 		return false;
 	}
-	
-	public int hashCode(){
+
+	public int hashCode() {
 		return id.hashCode();
 	}
 
