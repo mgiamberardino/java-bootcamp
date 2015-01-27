@@ -186,6 +186,10 @@ public class UserServiceTest
     		assertTrue(likes.contains(l));
     	}
     }
-    
+
+    public void testFactoryCreation(){
+    	UserService service = UserServiceFactory.getLocalService();
+    	assertNotNull(service);
+    }
 }
 

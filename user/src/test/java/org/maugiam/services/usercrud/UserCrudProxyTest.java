@@ -170,5 +170,10 @@ public class UserCrudProxyTest extends TestCase {
     		assertTrue(likes.contains(l));
     	}
     }
-	
+
+    public void testFactoryCreation(){
+    	UserService proxy = UserServiceFactory.getRemoteServiceUsingJMS();
+    	assertNotNull(proxy);
+    }
+    
 }
