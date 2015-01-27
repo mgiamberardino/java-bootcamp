@@ -12,16 +12,16 @@ import java.util.Map;
  * @author Mauro J Giamberardino
  *
  */
-public class UserCrudImpl implements UserCrudService {
+public class UserServiceImpl implements UserService {
 
 	private Map<String,User> users;
 	
-	public UserCrudImpl() {
+	public UserServiceImpl() {
 		users = new HashMap<String, User>();
 	}
 	
 	/**
-	 * @see org.maugiam.services.usercrud.UserCrudService#createUser()
+	 * @see org.maugiam.services.usercrud.UserService#createUser()
 	 */
 	public User createUser(User user) {
 		if (!users.containsKey(user.getUsername())){
@@ -32,14 +32,14 @@ public class UserCrudImpl implements UserCrudService {
 	}
 
 	/**
-	 * @see org.maugiam.services.usercrud.UserCrudService#getUser(java.lang.String)
+	 * @see org.maugiam.services.usercrud.UserService#getUser(java.lang.String)
 	 */
 	public User getUser(String username) {
 		return users.get(username);
 	}
 
 	/**
-	 * @see org.maugiam.services.usercrud.UserCrudService#updateUser(org.maugiam.services.usercrud.User)
+	 * @see org.maugiam.services.usercrud.UserService#updateUser(org.maugiam.services.usercrud.User)
 	 */
 	public void updateUser(User user) {
 		User updUser = users.get(user.getUsername());
@@ -50,7 +50,7 @@ public class UserCrudImpl implements UserCrudService {
 	}
 
 	/**
-	 * @see org.maugiam.services.usercrud.UserCrudService#deleteUser(java.lang.String)
+	 * @see org.maugiam.services.usercrud.UserService#deleteUser(java.lang.String)
 	 */
 	public void deleteUser(String username) {
 		users.remove(username);

@@ -15,14 +15,14 @@ import junit.framework.TestCase;
  */
 public class UserCrudProxyTest extends TestCase {
 
-	UserCrudService uService;
+	UserService uService;
 	
 	/**
 	 * @see junit.framework.TestCase#setUp()
 	 */
 	protected void setUp() throws Exception {
 		super.setUp();
-		uService = new UserCrudProxy(new UserCrudImpl());
+		uService = new UserServiceProxy(new UserServiceImpl());
 	}
 
     public void testInstanceCreation()

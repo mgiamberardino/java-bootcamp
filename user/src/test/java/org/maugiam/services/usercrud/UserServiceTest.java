@@ -32,13 +32,13 @@ public class UserServiceTest
         return new TestSuite( UserServiceTest.class );
     }
 
-    UserCrudService uService;;
+    UserService uService;;
     
     @Override
     protected void setUp() throws Exception {
     	// TODO Auto-generated method stub
     	super.setUp();
-    	uService = new UserCrudImpl();
+    	uService = new UserServiceImpl();
     }
     
     public void testInstanceCreation()

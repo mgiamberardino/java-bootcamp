@@ -9,7 +9,7 @@ import java.util.List;
  * @author Mauro J Giamberardino
  *
  */
-public interface UserCrudService {
+public interface UserService {
 
 	/**
 	 * Creates a user a returns it, if there is an user with the username then
